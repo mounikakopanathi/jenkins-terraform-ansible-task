@@ -16,7 +16,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    dir('/var/lib/jenkins/workspace/ansible-tf/ansible-task/jenkins-terraform-ansible-task') {
+                    dir('/var/lib/jenkins/workspace/ansible-tf/jenkins-terraform-ansible-task') {
                     sh 'pwd'
                     sh 'terraform init'
                     sh 'terraform validate'
