@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -8,7 +9,8 @@ pipeline {
             steps {
                 deleteDir()
                 sh 'echo cloning repo'
-                sh 'git clone https://github.com/rarvez77/ansible-task.git' 
+                //sh 'git clone https://github.com/rarvez77/ansible-task.git' 
+                sh 'https://github.com/betawins/jenkins-terraform-ansible-task.git'
             }
         }
         
@@ -16,6 +18,7 @@ pipeline {
             steps {
                 script {
                     dir('/var/lib/jenkins/workspace/ansible-tf/ansible-task/') {
+                    dir('x') {
                     sh 'pwd'
                     sh 'terraform init'
                     sh 'terraform validate'
